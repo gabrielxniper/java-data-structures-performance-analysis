@@ -30,6 +30,9 @@ public class Vetor {
     public int getSize() {
         return this.size;
     }
+    public int[] getData() {
+        return this.data;
+    }
     @Override
     public String toString() {
         String resultado = "";
