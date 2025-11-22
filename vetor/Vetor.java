@@ -21,6 +21,27 @@ public class Vetor {
         quickSortRecursivo(this.data, 0, this.size - 1);
     }
 
+
+    public int buscaBinaria(int valor) {
+        return buscaBinariaRecursiva(valor, 0, this.size - 1);
+    }
+    private int buscaBinariaRecursiva(int valor, int inicio, int fim) {
+        if (inicio > fim) {
+            return -1;
+        }
+        int meio = (inicio + fim) / 2;
+        if (this.data[meio] == valor) {
+            return meio;
+        }
+        if (this.data[meio] < valor) {
+            return buscaBinariaRecursiva(valor, meio + 1, fim);
+        } 
+        else {
+            return buscaBinariaRecursiva(valor, inicio, meio - 1);
+        }
+    }
+
+
     private void quickSortRecursivo(int[] vetor, int inicio, int fim) {
         if (inicio >= fim){
             return;
@@ -44,6 +65,9 @@ public class Vetor {
         if (inicio < f) quickSortRecursivo(vetor, inicio, f);
         if (i < fim) quickSortRecursivo(vetor, i, fim);
     }
+
+
+    
     public void bubbleSort(int[] vetor) {
         int tamanho = vetor.length;
         for(int i = 0; i<tamanho-1; i++){

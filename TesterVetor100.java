@@ -6,7 +6,7 @@ public class TesterVetor100 {
         long somarTempos = 0;
         int repeticao = 0;
         do{
-            System.out.println("\n=== TESTE INSERÇÃO DE VALORES NO VETOR DE 100 POSICOES DECRESCENTE ===");
+            System.out.println("\n=== TESTE INSERCAO DE VALORES NO VETOR DE 100 POSICOES DECRESCENTE ===");
             System.out.println(Arrays.toString(vetor100));
             
             for (int i = 0; i < 5; i++) {
@@ -24,8 +24,8 @@ public class TesterVetor100 {
             double mediaMillisegundos = mediaNano / 1000000.0;
             System.out.println("\n--- RESULTADO FINAL ---");
             System.out.println("Tamanho: " + 100);
-            System.out.println("Tempo Médio (ns): " + mediaNano);
-            System.out.println("Tempo Médio (ms): " + String.format("%.4f", mediaMillisegundos));
+            System.out.println("Tempo Medio (ns): " + mediaNano);
+            System.out.println("Tempo Medio (ms): " + String.format("%.4f", mediaMillisegundos));
             
 
             System.out.println("\n====================================================");
@@ -44,21 +44,21 @@ public class TesterVetor100 {
                 long fimBusca = System.nanoTime();
                 long tempoBusca = fimBusca - inicioBusca;
                 somarTemposBusca += tempoBusca;
-                System.out.println("Execução " + (i + 1) +" - Índice encontrado: " + indice +" -> Tempo: " + tempoBusca + " ns");
+                System.out.println("Execucao " + (i + 1) +" - Indice encontrado: " + indice +" -> Tempo: " + tempoBusca + " ns");
 
             }
             long mediaBusca = somarTemposBusca / 5;
             System.out.println("\n--- RESULTADO FINAL BUSCA ---");
             System.out.println("Tamanho: " + 100);
             System.out.println("Valor procurado: " + valorProcurado);
-            System.out.println("Tempo Médio Busca (ns): " + mediaBusca);
-            System.out.println("Tempo Médio Busca (ms): " + String.format("%.4f", mediaBusca / 1000000.0));
+            System.out.println("Tempo Medio Busca (ns): " + mediaBusca);
+            System.out.println("Tempo Medio Busca (ms): " + String.format("%.4f", mediaBusca / 1000000.0));
 
 
             System.out.println("\n====================================================");
 
 
-            System.out.println("\n=== TESTE ORDENAÇÃO(BUBBLE SORT) COM VETOR DE 100 POSICOES ===");
+            System.out.println("\n=== TESTE ORDENACAO(BUBBLE SORT) COM VETOR DE 100 POSICOES ===");
             long somarTemposBB100 = 0;
             for (int i = 0; i < 5; i++) {
                 Vetor vetorTeste = new Vetor(100);
@@ -80,11 +80,11 @@ public class TesterVetor100 {
 
             System.out.println("\n--- RESULTADO FINAL ORDENACAO BUBBLE SORT ---");
             System.out.println("Tamanho: " + 100);
-            System.out.println("Tempo Médio (ns): " + mediaNanoBB100);
-            System.out.println("Tempo Médio (ms): " + String.format("%.4f", mediaMillisegundosBB100));
+            System.out.println("Tempo Medio (ns): " + mediaNanoBB100);
+            System.out.println("Tempo Medio (ms): " + String.format("%.4f", mediaMillisegundosBB100));
             System.out.println("\n====================================================");
 
-            System.out.println("\n=== TESTE ORDENAÇÃO(QUICK SORT) COM VETOR DE 100 POSICOES ===");
+            System.out.println("\n=== TESTE ORDENACAO(QUICK SORT) COM VETOR DE 100 POSICOES ===");
             long somarTemposQS100 = 0;
             for (int i = 0; i < 5; i++) {
                 Vetor vetorTeste = new Vetor(100);
@@ -118,7 +118,7 @@ public class TesterVetor100 {
 
         do{
             Vetor.embaralhar(vetor100);
-            System.out.println("\n=== TESTE INSERÇÃO DE VALORES NO VETOR DE 100 POSICOES DESORDENADO ===");
+            System.out.println("\n=== TESTE INSERCAO DE VALORES NO VETOR DE 100 POSICOES DESORDENADO ===");
             System.out.println(Arrays.toString(vetor100));
             
             for (int i = 0; i < 5; i++) {
@@ -136,8 +136,8 @@ public class TesterVetor100 {
             double mediaMillisegundos = mediaNano / 1000000.0;
             System.out.println("\n--- RESULTADO FINAL ---");
             System.out.println("Tamanho: " + 100);
-            System.out.println("Tempo Médio (ns): " + mediaNano);
-            System.out.println("Tempo Médio (ms): " + String.format("%.4f", mediaMillisegundos));
+            System.out.println("Tempo Medio (ns): " + mediaNano);
+            System.out.println("Tempo Medio (ms): " + String.format("%.4f", mediaMillisegundos));
             
 
             System.out.println("\n====================================================");
@@ -156,7 +156,7 @@ public class TesterVetor100 {
                 long fimBusca = System.nanoTime();
                 long tempoBusca = fimBusca - inicioBusca;
                 somarTemposBusca += tempoBusca;
-                System.out.println("Execução " + (i + 1) +" - Índice encontrado: " + indice +" -> Tempo: " + tempoBusca + " ns");
+                System.out.println("Execucao " + (i + 1) +" - Indice encontrado: " + indice +" -> Tempo: " + tempoBusca + " ns");
 
             }
             long mediaBusca = somarTemposBusca / 5;
@@ -170,7 +170,7 @@ public class TesterVetor100 {
             System.out.println("\n====================================================");
 
 
-            System.out.println("\n=== TESTE ORDENAÇÃO(BUBBLE SORT) COM VETOR DE 100 POSICOES ===");
+            System.out.println("\n=== TESTE ORDENACAO(BUBBLE SORT) COM VETOR DE 100 POSICOES ===");
             long somarTemposBB100 = 0;
             for (int i = 0; i < 5; i++) {
                 Vetor vetorTeste = new Vetor(100);
@@ -196,7 +196,7 @@ public class TesterVetor100 {
 
             System.out.println("\n====================================================");
 
-            System.out.println("\n=== TESTE ORDENAÇÃO(QUICK SORT) COM VETOR DE 100 POSICOES ===");
+            System.out.println("\n=== TESTE ORDENACAO(QUICK SORT) COM VETOR DE 100 POSICOES ===");
             long somarTemposQS100 = 0;
             for (int i = 0; i < 5; i++) {
                 Vetor vetorTeste = new Vetor(100);
@@ -217,8 +217,8 @@ public class TesterVetor100 {
             double mediaMillisegundosQS100 = mediaNanoQS100 / 1000000.0;
             System.out.println("\n--- RESULTADO FINAL ORDENACAO QUICK SORT ---");
             System.out.println("Tamanho: " + 100);
-            System.out.println("Tempo Médio (ns): " + mediaNanoQS100);
-            System.out.println("Tempo Médio (ms): " + String.format("%.4f", mediaMillisegundosQS100));
+            System.out.println("Tempo Medio (ns): " + mediaNanoQS100);
+            System.out.println("Tempo Medio (ms): " + String.format("%.4f", mediaMillisegundosQS100));
 
 
             repeticao++;
@@ -232,7 +232,7 @@ public class TesterVetor100 {
 
         
         do{
-            System.out.println("\n=== TESTE INSERÇÃO DE VALORES NO VETOR DE 100 POSICOES CRESCENTE ===");
+            System.out.println("\n=== TESTE INSERCAO DE VALORES NO VETOR DE 100 POSICOES CRESCENTE ===");
             int[] vetor100c = Vetor.gerarValoresCresc(100);
             System.out.println(Arrays.toString(vetor100c));
             
@@ -251,8 +251,8 @@ public class TesterVetor100 {
             double mediaMillisegundos = mediaNano / 1000000.0;
             System.out.println("\n--- RESULTADO FINAL ---");
             System.out.println("Tamanho: " + 100);
-            System.out.println("Tempo Médio (ns): " + mediaNano);
-            System.out.println("Tempo Médio (ms): " + String.format("%.4f", mediaMillisegundos));
+            System.out.println("Tempo Medio (ns): " + mediaNano);
+            System.out.println("Tempo Medio (ms): " + String.format("%.4f", mediaMillisegundos));
             
 
             System.out.println("\n====================================================");
@@ -271,21 +271,47 @@ public class TesterVetor100 {
                 long fimBusca = System.nanoTime();
                 long tempoBusca = fimBusca - inicioBusca;
                 somarTemposBusca += tempoBusca;
-                System.out.println("Execução " + (i + 1) +" - Índice encontrado: " + indice +" -> Tempo: " + tempoBusca + " ns");
+                System.out.println("Execucao " + (i + 1) +" - Indice encontrado: " + indice +" -> Tempo: " + tempoBusca + " ns");
 
             }
             long mediaBusca = somarTemposBusca / 5;
             System.out.println("\n--- RESULTADO FINAL BUSCA ---");
             System.out.println("Tamanho: " + 100);
             System.out.println("Valor procurado: " + valorProcurado);
-            System.out.println("Tempo Médio Busca (ns): " + mediaBusca);
-            System.out.println("Tempo Médio Busca (ms): " + String.format("%.4f", mediaBusca / 1000000.0));
+            System.out.println("Tempo Medio Busca (ns): " + mediaBusca);
+            System.out.println("Tempo Medio Busca (ms): " + String.format("%.4f", mediaBusca / 1000000.0));
 
 
             System.out.println("\n====================================================");
 
 
-            System.out.println("\n=== TESTE ORDENAÇÃO(BUBBLE SORT) COM VETOR DE 100 POSICOES ===");
+            System.out.println("\n=== TESTE DE BUSCA BINARIA ===");
+            long somarTemposBuscaBinaria = 0;
+            int valorProcuradoBinario = 50;
+            for(int i = 0; i<5; i++){
+                Vetor vetorBusca = new Vetor(100);
+                for (int j = 0; j < vetor100c.length; j++) {
+                    vetorBusca.insert(vetor100c[j]);
+                }
+                long inicioBusca = System.nanoTime();
+                int indice = vetorBusca.buscaBinaria(valorProcuradoBinario);
+                long fimBusca = System.nanoTime();
+                long tempoBusca = fimBusca - inicioBusca;
+                somarTemposBuscaBinaria += tempoBusca;
+                System.out.println("Execucao " + (i + 1) +" - Indice encontrado: " + indice +" -> Tempo: " + tempoBusca + " ns");
+
+            }
+            long mediaBuscaBinaria = somarTemposBuscaBinaria / 5;
+            System.out.println("\n--- RESULTADO FINAL BUSCA BINARIA ---");
+            System.out.println("Tamanho: " + 100);
+            System.out.println("Valor procurado: " + valorProcuradoBinario);
+            System.out.println("Tempo Medio Busca (ns): " + mediaBuscaBinaria);
+            System.out.println("Tempo Medio Busca (ms): " + String.format("%.4f", mediaBuscaBinaria / 1000000.0));
+
+
+            System.out.println("\n====================================================");
+
+            System.out.println("\n=== TESTE ORDENACAO(BUBBLE SORT) COM VETOR DE 100 POSICOES ===");
             long somarTemposBB100 = 0;
             for (int i = 0; i < 5; i++) {
                 Vetor vetorTeste = new Vetor(100);
@@ -306,11 +332,11 @@ public class TesterVetor100 {
             double mediaMillisegundosBB100 = mediaNanoBB100 / 1000000.0;
             System.out.println("\n--- RESULTADO FINAL ORDENACAO ---");
             System.out.println("Tamanho: " + 100);
-            System.out.println("Tempo Médio (ns): " + mediaNanoBB100);
-            System.out.println("Tempo Médio (ms): " + String.format("%.4f", mediaMillisegundosBB100));
+            System.out.println("Tempo Medio (ns): " + mediaNanoBB100);
+            System.out.println("Tempo Medio (ms): " + String.format("%.4f", mediaMillisegundosBB100));
             System.out.println("\n====================================================");
 
-            System.out.println("\n=== TESTE ORDENAÇÃO(QUICK SORT) COM VETOR DE 100 POSICOES ===");
+            System.out.println("\n=== TESTE ORDENACAO(QUICK SORT) COM VETOR DE 100 POSICOES ===");
             long somarTemposQS100 = 0;
             for (int i = 0; i < 5; i++) {
                 Vetor vetorTeste = new Vetor(100);
@@ -331,8 +357,8 @@ public class TesterVetor100 {
             double mediaMillisegundosQS100 = mediaNanoQS100 / 1000000.0;
             System.out.println("\n--- RESULTADO FINAL ORDENACAO QUICK SORT ---");
             System.out.println("Tamanho: " + 100);
-            System.out.println("Tempo Médio (ns): " + mediaNanoQS100);
-            System.out.println("Tempo Médio (ms): " + String.format("%.4f", mediaMillisegundosQS100));
+            System.out.println("Tempo Medio (ns): " + mediaNanoQS100);
+            System.out.println("Tempo Medio (ms): " + String.format("%.4f", mediaMillisegundosQS100));
             repeticao++;
         }while(repeticao<1);
     }

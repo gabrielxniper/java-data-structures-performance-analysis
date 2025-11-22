@@ -32,7 +32,7 @@ public class TesterVetor10000 {
 
             System.out.println("\n=== TESTE DE BUSCA SEQUENCIAL ===");
             long somarTemposBusca = 0;
-            int valorProcurado = 50;
+            int valorProcurado = 5000;
             for(int i = 0; i<5; i++){
                 Vetor vetorBusca = new Vetor(10000);
                 for (int j = 0; j < vetor10000.length; j++) {
@@ -118,7 +118,7 @@ public class TesterVetor10000 {
 
             System.out.println("\n=== TESTE DE BUSCA SEQUENCIAL ===");
             long somarTemposBusca = 0;
-            int valorProcurado = 50;
+            int valorProcurado = 5000;
             for(int i = 0; i<5; i++){
                 Vetor vetorBusca = new Vetor(10000);
                 for (int j = 0; j < vetor10000.length; j++) {
@@ -205,7 +205,7 @@ public class TesterVetor10000 {
 
             System.out.println("\n=== TESTE DE BUSCA SEQUENCIAL ===");
             long somarTemposBusca = 0;
-            int valorProcurado = 50;
+            int valorProcurado = 5000;
             for(int i = 0; i<5; i++){
                 Vetor vetorBusca = new Vetor(10000);
                 for (int j = 0; j < vetor10000c.length; j++) {
@@ -220,11 +220,37 @@ public class TesterVetor10000 {
 
             }
             long mediaBusca = somarTemposBusca / 5;
-            System.out.println("\n--- RESULTADO FINAL BUSCA ---");
+            System.out.println("\n--- RESULTADO FINAL BUSCA SEQUENCIAL ---");
             System.out.println("Tamanho: " + 10000);
             System.out.println("Valor procurado: " + valorProcurado);
             System.out.println("Tempo Médio Busca (ns): " + mediaBusca);
             System.out.println("Tempo Médio Busca (ms): " + String.format("%.4f", mediaBusca / 1000000.0));
+
+
+            System.out.println("\n====================================================");
+
+            System.out.println("\n=== TESTE DE BUSCA BINARIA ===");
+            long somarTemposBuscaBinaria = 0;
+            int valorProcuradoBinario = 5000;
+            for(int i = 0; i<5; i++){
+                Vetor vetorBusca = new Vetor(10000);
+                for (int j = 0; j < vetor10000c.length; j++) {
+                    vetorBusca.insert(vetor10000c[j]);
+                }
+                long inicioBusca = System.nanoTime();
+                int indice = vetorBusca.buscaBinaria(valorProcuradoBinario);
+                long fimBusca = System.nanoTime();
+                long tempoBusca = fimBusca - inicioBusca;
+                somarTemposBuscaBinaria += tempoBusca;
+                System.out.println("Execucao " + (i + 1) +" - Indice encontrado: " + indice +" -> Tempo: " + tempoBusca + " ns");
+
+            }
+            long mediaBuscaBinaria = somarTemposBuscaBinaria / 5;
+            System.out.println("\n--- RESULTADO FINAL BUSCA BINARIA ---");
+            System.out.println("Tamanho: " + 10000);
+            System.out.println("Valor procurado: " + valorProcuradoBinario);
+            System.out.println("Tempo Medio Busca (ns): " + mediaBuscaBinaria);
+            System.out.println("Tempo Medio Busca (ms): " + String.format("%.4f", mediaBuscaBinaria / 1000000.0));
 
 
             System.out.println("\n====================================================");
