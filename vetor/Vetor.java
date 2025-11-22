@@ -1,4 +1,7 @@
 package Vetor;
+
+import java.util.Random;
+
 public class Vetor {
     private int[] data;
     private int size; 
@@ -26,7 +29,14 @@ public class Vetor {
             }
         }
     }
-
+    public int buscaSequencial(int valor) {
+        for (int i = 0; i < this.size; i++) {
+            if (this.data[i] == valor) {
+                return i; //
+            }
+        }
+        return -1;
+    }
     public int getSize() {
         return this.size;
     }
@@ -45,5 +55,22 @@ public class Vetor {
             }
         }
         return resultado;
+    }
+    public static int[] gerarValores(int tamanho) {
+        int[] vetorGerado = new int[tamanho];
+        for (int i = 0; i < tamanho; i++) {
+            vetorGerado[i] = tamanho - i;
+        }
+        return vetorGerado;
+    }
+
+    public static void embaralhar(int[] vetor) {
+        Random random = new Random();
+        for (int i = vetor.length - 1; i > 0; i--) {
+            int j = random.nextInt(i + 1);
+            int vetorI = vetor[i];
+            vetor[i] = vetor[j];
+            vetor[j] = vetorI;
+        }
     }
 }
