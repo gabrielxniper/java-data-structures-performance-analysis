@@ -4,10 +4,6 @@ public class TesterVetor100 {
     public static void main(String[] args) {
         int[] vetor100 = Vetor.gerarValores(100);
         Vetor.embaralhar(vetor100);
-        //int[] vetor1000 = Vetor.gerarValores(1000);
-        //Vetor.embaralhar(vetor1000);
-        //int[] vetor10000 = Vetor.gerarValores(10000);
-        //Vetor.embaralhar(vetor10000);
         long somarTempos = 0;
         System.out.println("\n=== TESTE INSERÇÃO DE VALORES NO VETOR DE 100 POSICOES ===");
         System.out.println(Arrays.toString(vetor100));
@@ -75,10 +71,13 @@ public class TesterVetor100 {
             long tempoDecorridoBB100 = fimBB100 - inicioBB100;
             somarTemposBB100 += tempoDecorridoBB100;
             System.out.println("\nTeste BUBBLE SORT " + (i + 1) + ": " + tempoDecorridoBB100 + " ns" );
+            if(i==4){
+                System.out.println("\nVetor ordenado:\n[ " + vetorTeste.toString()+ " ]\n");
+            }
         }
         long mediaNanoBB100 = somarTemposBB100 / 5;
         double mediaMillisegundosBB100 = mediaNanoBB100 / 1000000.0;
-        System.out.println("\n--- RESULTADO FINAL ---");
+        System.out.println("\n--- RESULTADO FINAL ORDENACAO ---");
         System.out.println("Tamanho: " + 100);
         System.out.println("Tempo Médio (ns): " + mediaNanoBB100);
         System.out.println("Tempo Médio (ms): " + String.format("%.4f", mediaMillisegundosBB100));
