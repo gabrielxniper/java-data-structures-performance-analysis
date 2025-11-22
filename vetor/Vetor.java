@@ -63,7 +63,13 @@ public class Vetor {
         }
         return vetorGerado;
     }
-
+    public static int[] gerarValoresCresc(int tamanho) {
+        int[] vetorGerado = new int[tamanho];
+        for (int i = 0; i < tamanho; i++) {
+            vetorGerado[i] = i+1;
+        }
+        return vetorGerado;
+    }
     public static void embaralhar(int[] vetor) {
         Random random = new Random();
         for (int i = vetor.length - 1; i > 0; i--) {
