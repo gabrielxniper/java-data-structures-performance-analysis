@@ -149,8 +149,8 @@ public class TesterArvoreBB1000 {
         }
 
         long mediaTemp = somaTemp / 5;
-        System.out.println("Media busca ("+aleatorio2+"): " + mediaTemp + " ns\n");
-        System.out.println("Media busca ("+aleatorio2+"): " + String.format("%.4f", mediaTemp / 1000000.0) + " ms\n");
+        System.out.println("Media busca ("+aleatorio1+"): " + mediaTemp + " ns\n");
+        System.out.println("Media busca ("+aleatorio1+"): " + String.format("%.4f", mediaTemp / 1000000.0) + " ms\n");
 
         System.out.println("\n===============================");
 
