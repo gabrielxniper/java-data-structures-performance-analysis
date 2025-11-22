@@ -1,13 +1,14 @@
+package TesteArvores;
 import ArvoreDeBuscaBinaria.ArvoreBinaria;
 
-public class TesterArvoreBB100 {
+public class TesterArvoreBB1000 {
     public static void main(String[] args) {
         
-        int aleatorio1 = 7;
-        int aleatorio2 = 27;
-        int aleatorio3 = 87;
+        int aleatorio1 = 70;
+        int aleatorio2 = 270;
+        int aleatorio3 = 870;
         int inicial = 1;
-        int tamanho = 100;
+        int tamanho = 1000;
         int metade = tamanho/2;
         int ultimo = tamanho;
 

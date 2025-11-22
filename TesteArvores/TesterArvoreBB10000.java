@@ -1,13 +1,14 @@
+package TesteArvores;
 import ArvoreDeBuscaBinaria.ArvoreBinaria;
 
-public class TesterArvoreBB1000 {
+public class TesterArvoreBB10000 {
     public static void main(String[] args) {
         
-        int aleatorio1 = 70;
-        int aleatorio2 = 270;
-        int aleatorio3 = 870;
+        int aleatorio1 = 700;
+        int aleatorio2 = 2700;
+        int aleatorio3 = 8700;
         int inicial = 1;
-        int tamanho = 1000;
+        int tamanho = 10000;
         int metade = tamanho/2;
         int ultimo = tamanho;
 
@@ -349,9 +350,8 @@ public class TesterArvoreBB1000 {
         long somaR3 = 0;
 
         System.out.println("===============================");
-
+        System.gc();
         System.out.println("\n=== BUSCA DO ELEMENTO DO MEIO NA ARVORE ALEATORIA (" + meio + ") ===\n");
-
         for (int i = 0; i < 5; i++) {
             arvoreRandomBusca.buscar(meio);
             long inicio = System.nanoTime();

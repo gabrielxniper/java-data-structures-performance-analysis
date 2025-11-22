@@ -1,3 +1,4 @@
+package TesteVetores;
 import Vetor.Vetor;
 public class TesterVetor10000 {
     public static void main(String[] args) {

@@ -1,3 +1,4 @@
+package TesteVetores;
 import Vetor.Vetor;
 import java.util.Arrays;
 public class TesterVetor1000 {

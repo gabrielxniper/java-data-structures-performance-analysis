@@ -1,4 +1,4 @@
-package  ArvoreDeBuscaBinaria;
+package ArvoreDeBuscaBinaria;
 
 import java.util.Random;
 
