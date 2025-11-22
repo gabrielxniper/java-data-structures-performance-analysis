@@ -17,6 +17,33 @@ public class Vetor {
         this.data[this.size] = data;
         this.size++;
     }
+    public void quickSort() {
+        quickSortRecursivo(this.data, 0, this.size - 1);
+    }
+
+    private void quickSortRecursivo(int[] vetor, int inicio, int fim) {
+        if (inicio >= fim){
+            return;
+        } 
+        int i = inicio;
+        int f = fim;
+        int pivo = vetor[(inicio + fim) / 2];
+
+        while (i <= f) {
+            while (vetor[i] < pivo) i++;
+            while (vetor[f] > pivo) f--;
+
+            if (i <= f) {
+                int temp = vetor[i];
+                vetor[i] = vetor[f];
+                vetor[f] = temp;
+                i++;
+                f--;
+            }
+        }
+        if (inicio < f) quickSortRecursivo(vetor, inicio, f);
+        if (i < fim) quickSortRecursivo(vetor, i, fim);
+    }
     public void bubbleSort(int[] vetor) {
         int tamanho = vetor.length;
         for(int i = 0; i<tamanho-1; i++){
@@ -37,6 +64,7 @@ public class Vetor {
         }
         return -1;
     }
+
     public int getSize() {
         return this.size;
     }
