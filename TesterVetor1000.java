@@ -53,6 +53,31 @@ public class TesterVetor1000 {
             System.out.println("Tamanho: " + 1000);
             System.out.println("Tempo Medio (ns): " + mediaNanoBB1000);
             System.out.println("Tempo Medio (ms): " + String.format("%.4f", mediaMillisegundosBB1000));
+            System.out.println("\n====================================================");
+
+            System.out.println("\n=== TESTE ORDENACAO(QUICK SORT) COM VETOR DE 1000 POSICOES ===");
+            long somarTemposQS1000 = 0;
+            for (int i = 0; i < 5; i++) {
+                Vetor vetorTeste = new Vetor(1000);
+                for (int j = 0; j < vetor1000.length; j++) {
+                    vetorTeste.insert(vetor1000[j]);
+                }
+                long inicioQS1000 = System.nanoTime();
+                vetorTeste.quickSort();
+                long fimQS1000 = System.nanoTime();
+                long tempoDecorridoQS1000 = fimQS1000 - inicioQS1000;
+                somarTemposQS1000 += tempoDecorridoQS1000;
+                System.out.println("\nTeste QUICK SORT " + (i + 1) + ": " + tempoDecorridoQS1000 + " ns" );
+                if(i==4){
+                    System.out.println("\nVetor ordenado:\n[ " + vetorTeste.toString()+ " ]\n");
+                }
+            }
+            long mediaNanoQS1000 = somarTemposQS1000 / 5;
+            double mediaMillisegundosQS1000 = mediaNanoQS1000 / 1000000.0;
+            System.out.println("\n--- RESULTADO FINAL ORDENACAO QUICK SORT ---");
+            System.out.println("Tamanho: " + 1000);
+            System.out.println("Tempo Médio (ns): " + mediaNanoQS1000);
+            System.out.println("Tempo Médio (ms): " + String.format("%.4f", mediaMillisegundosQS1000));
             repeticao++;
         }while(repeticao<1);
         repeticao = 0;
@@ -63,6 +88,7 @@ public class TesterVetor1000 {
 
 
         do{
+            somarTempos = 0;
             Vetor.embaralhar(vetor1000);
             System.out.println("\n=== TESTE INSERCAO DE VALORES NO VETOR DE 1000 POSICOES DESORDENADO ===");
             System.out.println(Arrays.toString(vetor1000));
@@ -111,6 +137,31 @@ public class TesterVetor1000 {
             System.out.println("Tamanho: " + 100);
             System.out.println("Tempo Medio (ns): " + mediaNanoBB1000);
             System.out.println("Tempo Medio (ms): " + String.format("%.4f", mediaMillisegundosBB1000));
+            System.out.println("\n====================================================");
+
+            System.out.println("\n=== TESTE ORDENACAO(QUICK SORT) COM VETOR DE 1000 POSICOES ===");
+            long somarTemposQS1000 = 0;
+            for (int i = 0; i < 5; i++) {
+                Vetor vetorTeste = new Vetor(1000);
+                for (int j = 0; j < vetor1000.length; j++) {
+                    vetorTeste.insert(vetor1000[j]);
+                }
+                long inicioQS1000 = System.nanoTime();
+                vetorTeste.quickSort();
+                long fimQS1000 = System.nanoTime();
+                long tempoDecorridoQS1000 = fimQS1000 - inicioQS1000;
+                somarTemposQS1000 += tempoDecorridoQS1000;
+                System.out.println("\nTeste QUICK SORT " + (i + 1) + ": " + tempoDecorridoQS1000 + " ns" );
+                if(i==4){
+                    System.out.println("\nVetor ordenado:\n[ " + vetorTeste.toString()+ " ]\n");
+                }
+            }
+            long mediaNanoQS1000 = somarTemposQS1000 / 5;
+            double mediaMillisegundosQS1000 = mediaNanoQS1000 / 1000000.0;
+            System.out.println("\n--- RESULTADO FINAL ORDENACAO QUICK SORT ---");
+            System.out.println("Tamanho: " + 1000);
+            System.out.println("Tempo Médio (ns): " + mediaNanoQS1000);
+            System.out.println("Tempo Médio (ms): " + String.format("%.4f", mediaMillisegundosQS1000));
             repeticao++;
         }while(repeticao<1);
 
@@ -122,6 +173,7 @@ public class TesterVetor1000 {
 
         
         do{
+            somarTempos = 0;
             System.out.println("\n=== TESTE INSERCAO DE VALORES NO VETOR DE 1000 POSICOES CRESCENTE ===");
             int[] vetor1000c = Vetor.gerarValoresCresc(1000);
             System.out.println(Arrays.toString(vetor1000c));
@@ -156,6 +208,7 @@ public class TesterVetor1000 {
                 for (int j = 0; j < vetor1000c.length; j++) {
                     vetorBusca.insert(vetor1000c[j]);
                 }
+                vetorBusca.buscaSequencial(valorProcurado);
                 long inicioBusca = System.nanoTime();
                 int indice = vetorBusca.buscaSequencial(valorProcurado);
                 long fimBusca = System.nanoTime();
@@ -327,6 +380,7 @@ public class TesterVetor1000 {
                 for (int j = 0; j < vetor1000c.length; j++) {
                     vetorBusca.insert(vetor1000c[j]);
                 }
+                vetorBusca.buscaBinaria(valorProcuradoBinario);
                 long inicioBusca = System.nanoTime();
                 int indice = vetorBusca.buscaBinaria(valorProcuradoBinario);
                 long fimBusca = System.nanoTime();
@@ -516,6 +570,31 @@ public class TesterVetor1000 {
             System.out.println("Tamanho: " + 1000);
             System.out.println("Tempo Medio (ns): " + mediaNanoBB1000);
             System.out.println("Tempo Medio (ms): " + String.format("%.4f", mediaMillisegundosBB1000));
+            System.out.println("\n====================================================");
+
+            System.out.println("\n=== TESTE ORDENACAO(QUICK SORT) COM VETOR DE 1000 POSICOES ===");
+            long somarTemposQS1000 = 0;
+            for (int i = 0; i < 5; i++) {
+                Vetor vetorTeste = new Vetor(1000);
+                for (int j = 0; j < vetor1000.length; j++) {
+                    vetorTeste.insert(vetor1000[j]);
+                }
+                long inicioQS1000 = System.nanoTime();
+                vetorTeste.quickSort();
+                long fimQS1000 = System.nanoTime();
+                long tempoDecorridoQS1000 = fimQS1000 - inicioQS1000;
+                somarTemposQS1000 += tempoDecorridoQS1000;
+                System.out.println("\nTeste QUICK SORT " + (i + 1) + ": " + tempoDecorridoQS1000 + " ns" );
+                if(i==4){
+                    System.out.println("\nVetor ordenado:\n[ " + vetorTeste.toString()+ " ]\n");
+                }
+            }
+            long mediaNanoQS1000 = somarTemposQS1000 / 5;
+            double mediaMillisegundosQS1000 = mediaNanoQS1000 / 1000000.0;
+            System.out.println("\n--- RESULTADO FINAL ORDENACAO QUICK SORT ---");
+            System.out.println("Tamanho: " + 1000);
+            System.out.println("Tempo Médio (ns): " + mediaNanoQS1000);
+            System.out.println("Tempo Médio (ms): " + String.format("%.4f", mediaMillisegundosQS1000));
             repeticao++;
         }while(repeticao<1);
     }

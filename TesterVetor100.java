@@ -90,6 +90,7 @@ public class TesterVetor100 {
 
 
         do{
+            somarTempos = 0;
             Vetor.embaralhar(vetor100);
             System.out.println("\n=== TESTE INSERCAO DE VALORES NO VETOR DE 100 POSICOES DESORDENADO ===");
             System.out.println(Arrays.toString(vetor100));
@@ -177,6 +178,7 @@ public class TesterVetor100 {
 
         
         do{
+            somarTempos = 0;
             System.out.println("\n=== TESTE INSERCAO DE VALORES NO VETOR DE 100 POSICOES CRESCENTE ===");
             int[] vetor100c = Vetor.gerarValoresCresc(100);
             System.out.println(Arrays.toString(vetor100c));
@@ -206,11 +208,13 @@ public class TesterVetor100 {
             System.out.println("\n=== TESTE DE BUSCA SEQUENCIAL PRIMEIRO VALOR ===");
             long somarTemposBusca = 0;
             int valorProcurado = 1;
+    
             for(int i = 0; i<5; i++){
                 Vetor vetorBusca = new Vetor(100);
                 for (int j = 0; j < vetor100c.length; j++) {
                     vetorBusca.insert(vetor100c[j]);
                 }
+                vetorBusca.buscaSequencial(valorProcurado);
                 long inicioBusca = System.nanoTime();
                 int indice = vetorBusca.buscaSequencial(valorProcurado);
                 long fimBusca = System.nanoTime();
@@ -382,6 +386,7 @@ public class TesterVetor100 {
                 for (int j = 0; j < vetor100c.length; j++) {
                     vetorBusca.insert(vetor100c[j]);
                 }
+                vetorBusca.buscaBinaria(valorProcuradoBinario);
                 long inicioBusca = System.nanoTime();
                 int indice = vetorBusca.buscaBinaria(valorProcuradoBinario);
                 long fimBusca = System.nanoTime();
