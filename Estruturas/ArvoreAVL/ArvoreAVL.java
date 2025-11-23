@@ -89,5 +89,36 @@ public class ArvoreAVL {
         }
         return atual; 
     }
+    public static int[] gerarValoresCresc(int tamanho) {
+        int[] vetor = new int[tamanho];
+        for (int i = 0; i < tamanho; i++) {
+            vetor[i] = i + 1;
+        }
+        return vetor;
+    }
+
+    public static int[] gerarValoresDesc(int tamanho) {
+        int[] vetor = new int[tamanho];
+        for (int i = 0; i < tamanho; i++) {
+            vetor[i] = tamanho - i;
+        }
+        return vetor;
+    }
+
+    public static int[] gerarValoresRandom(int tamanho) {
+        int[] vetor = gerarValoresCresc(tamanho); // 1..tamanho
+
+        java.util.Random random = new java.util.Random();
+
+        for (int i = vetor.length - 1; i > 0; i--) {
+            int j = random.nextInt(i + 1);
+            int temp = vetor[i];
+            vetor[i] = vetor[j];
+            vetor[j] = temp;
+        }
+
+        return vetor;
+    }
+
 
 }
