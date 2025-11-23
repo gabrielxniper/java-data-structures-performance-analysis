@@ -89,6 +89,25 @@ public class ArvoreAVL {
         }
         return atual; 
     }
+    public boolean buscar(int valor) {
+        return buscarRecursivo(raiz, valor);
+    }
+
+    private boolean buscarRecursivo(No atual, int valor) {
+        if (atual == null) {
+            return false;
+        }
+
+        if (valor == atual.valor) {
+            return true;
+        }
+
+        if (valor < atual.valor) {
+            return buscarRecursivo(atual.esquerda, valor);
+        } else {
+            return buscarRecursivo(atual.direita, valor);
+        }
+    }
     public static int[] gerarValoresCresc(int tamanho) {
         int[] vetor = new int[tamanho];
         for (int i = 0; i < tamanho; i++) {
