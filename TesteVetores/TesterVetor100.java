@@ -9,7 +9,7 @@ public class TesterVetor100 {
         do{
             System.out.println("\n=== TESTE INSERCAO DE VALORES NO VETOR DE 100 POSICOES DECRESCENTE ===");
             System.out.println(Arrays.toString(vetor100));
-            
+            Runtime.getRuntime().gc();
             for (int i = 0; i < 5; i++) {
                 Vetor vetorTeste = new Vetor(100);
                 long inicio = System.nanoTime();
@@ -89,7 +89,7 @@ public class TesterVetor100 {
         System.out.println("\n====================================================");
         System.out.println("\n====================================================");
 
-
+        Runtime.getRuntime().gc();
         do{
             somarTempos = 0;
             Vetor.embaralhar(vetor100);
@@ -142,7 +142,7 @@ public class TesterVetor100 {
             System.out.println("Tempo Médio (ms): " + String.format("%.4f", mediaMillisegundosBB100));
 
             System.out.println("\n====================================================");
-
+            Runtime.getRuntime().gc();
             System.out.println("\n=== TESTE ORDENACAO(QUICK SORT) COM VETOR DE 100 POSICOES ===");
             long somarTemposQS100 = 0;
             for (int i = 0; i < 5; i++) {
@@ -183,7 +183,7 @@ public class TesterVetor100 {
             System.out.println("\n=== TESTE INSERCAO DE VALORES NO VETOR DE 100 POSICOES CRESCENTE ===");
             int[] vetor100c = Vetor.gerarValoresCresc(100);
             System.out.println(Arrays.toString(vetor100c));
-            
+            Runtime.getRuntime().gc();
             for (int i = 0; i < 5; i++) {
                 Vetor vetorTeste = new Vetor(100);
                 long inicio = System.nanoTime();
@@ -235,6 +235,7 @@ public class TesterVetor100 {
             System.out.println("\n====================================================");
             System.out.println("\n=== TESTE DE BUSCA SEQUENCIAL VALOR MEIO ===");
             long somarTemposBusca2 = 0;
+            Runtime.getRuntime().gc();
             int valorProcurado2 = 50;
             for(int i = 0; i<5; i++){
                 Vetor vetorBusca = new Vetor(100);
@@ -285,6 +286,7 @@ public class TesterVetor100 {
             System.out.println("\n=== TESTE DE BUSCA SEQUENCIAL VALOR ALEATORIO 1 ===");
             long somarTemposBusca4 = 0;
             int valorProcurado4 = 23;
+            Runtime.getRuntime().gc();
             for(int i = 0; i<5; i++){
                 Vetor vetorBusca = new Vetor(100);
                 for (int j = 0; j < vetor100c.length; j++) {
@@ -353,7 +355,7 @@ public class TesterVetor100 {
             System.out.println("Valor procurado: " + valorProcurado6);
             System.out.println("Tempo Medio Busca (ns): " + mediaBusca6);
             System.out.println("Tempo Medio Busca (ms): " + String.format("%.4f", mediaBusca6 / 1000000.0));
-
+            Runtime.getRuntime().gc();
             System.out.println("\n====================================================");
             System.out.println("\n=== TESTE DE BUSCA SEQUENCIAL VALOR INEXISTENTE ===");
             long somarTemposBusca7 = 0;
@@ -418,7 +420,7 @@ public class TesterVetor100 {
                 long tempoBusca = fimBusca - inicioBusca;
                 somarTemposBuscaBinaria2 += tempoBusca;
                 System.out.println("Execucao " + (i + 1) +" - Indice encontrado: " + indice +" -> Tempo: " + tempoBusca + " ns");
-
+            Runtime.getRuntime().gc();
             }
             long mediaBuscaBinaria2 = somarTemposBuscaBinaria2 / 5;
             System.out.println("\n--- RESULTADO FINAL BUSCA BINARIA ---");
@@ -477,7 +479,7 @@ public class TesterVetor100 {
             System.out.println("Tempo Medio Busca (ms): " + String.format("%.4f", mediaBuscaBinaria4 / 1000000.0));
 
             System.out.println("\n====================================================");
-
+            Runtime.getRuntime().gc();
             System.out.println("\n=== TESTE DE BUSCA BINARIA VALOR ALEATORIO 2 ===");
             long somarTemposBuscaBinaria5 = 0;
             int valorProcuradoBinario5 = 7;
@@ -502,7 +504,7 @@ public class TesterVetor100 {
             System.out.println("Tempo Medio Busca (ms): " + String.format("%.4f", mediaBuscaBinaria5 / 1000000.0));
 
             System.out.println("\n====================================================");
-
+            Runtime.getRuntime().gc();
             System.out.println("\n=== TESTE DE BUSCA BINARIA VALOR ALEATORIO 3 ===");
             long somarTemposBuscaBinaria6 = 0;
             int valorProcuradoBinario6 = 87;
@@ -551,7 +553,7 @@ public class TesterVetor100 {
             System.out.println("Tempo Medio Busca (ns): " + mediaBuscaBinaria7);
             System.out.println("Tempo Medio Busca (ms): " + String.format("%.4f", mediaBuscaBinaria7 / 1000000.0));
 
-
+            Runtime.getRuntime().gc();
             System.out.println("\n====================================================");
             System.out.println("\n=== TESTE ORDENACAO(BUBBLE SORT) COM VETOR DE 100 POSICOES ===");
             long somarTemposBB100 = 0;

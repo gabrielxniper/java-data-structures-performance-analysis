@@ -14,15 +14,22 @@ public class TesterArvoreBB100 {
 
 
         long somaCresc = 0;
+        Runtime.getRuntime().gc();
+        //a seguir, criação de arvore para "aquecer" o programa e evitar valores muito altos para a primeira execução:
+        for (int t = 0; t < 5; t++) {
+            ArvoreBinaria arvoreCrescAQuec = new ArvoreBinaria();
+            int[] valoresCresc = ArvoreBinaria.gerarValoresCresc(tamanho);
+            for (int i = 0; i < tamanho; i++) {
+                arvoreCrescAQuec.inserir(valoresCresc[i]);
+            }
+        }
 
         for (int t = 0; t < 5; t++) {
 
             ArvoreBinaria arvoreCresc = new ArvoreBinaria();
             int[] valoresCresc = ArvoreBinaria.gerarValoresCresc(tamanho);
-            for (int i = 0; i < tamanho; i++) {
-                arvoreCresc.inserir(valoresCresc[i]);
-            }
             long inicioCresc = System.nanoTime();
+            
             for (int i = 0; i < tamanho; i++) {
                 arvoreCresc.inserir(valoresCresc[i]);
             }
@@ -39,7 +46,7 @@ public class TesterArvoreBB100 {
 
 
         System.out.println("\n===============================");
-        
+        Runtime.getRuntime().gc();
         System.out.println("=== TESTES DE BUSCA NA ARVORE CRESCENTE (VALOR INICIAL) ===\n");
         long somaB1 = 0;
         ArvoreBinaria arvoreBusca = new ArvoreBinaria();
@@ -70,6 +77,7 @@ public class TesterArvoreBB100 {
         System.out.println("Media busca primeiro ("+ inicial +"): " + String.format("%.4f",mediaB1 / 1000000.0) + " ms\n");
 
         System.out.println("\n===============================");
+        Runtime.getRuntime().gc();
         System.out.println("=== TESTES DE BUSCA NA ARVORE CRESCENTE (VALOR MEDIO) ===\n");
         long somaB2 = 0;
         for (int i = 0; i < tamanho; i++) {
@@ -98,10 +106,11 @@ public class TesterArvoreBB100 {
         System.out.println("Media busca medio ("+metade+"): " + String.format("%.4f",mediaB2 / 1000000.0) + " ms\n");
 
         System.out.println("\n===============================");
-
+        Runtime.getRuntime().gc();
         System.out.println("=== TESTES DE BUSCA NA ARVORE CRESCENTE (VALOR FINAL) ===\n");
 
         long somaB3 = 0;
+        Runtime.getRuntime().gc();
         for (int i = 0; i < 5; i++) {
             arvoreBusca.buscar(ultimo);
             long inicio = System.nanoTime();
@@ -128,6 +137,7 @@ public class TesterArvoreBB100 {
 
 
         System.out.println("\n===============================");
+        Runtime.getRuntime().gc();
         System.out.println("=== TESTE DE BUSCA ALEATORIA NA ARVORE CRESCENTE 1 ===\n");
         long somaTemp = 0;
         for (int i = 0; i < 5; i++) {
@@ -154,7 +164,7 @@ public class TesterArvoreBB100 {
         System.out.println("Media busca ("+aleatorio1+"): " + String.format("%.4f", mediaTemp / 1000000.0) + " ms\n");
 
         System.out.println("\n===============================");
-
+        Runtime.getRuntime().gc();
         System.out.println("=== TESTE DE BUSCA ALEATORIA NA ARVORE CRESCENTE 2 ===\n");
         somaTemp = 0;
         for (int i = 0; i < 5; i++) {
@@ -181,7 +191,7 @@ public class TesterArvoreBB100 {
         System.out.println("Media busca ("+aleatorio2+"): " + String.format("%.4f", mediaTemp / 1000000.0) + " ms\n");
 
         System.out.println("\n===============================");
-
+        Runtime.getRuntime().gc();
         System.out.println("=== TESTE DE BUSCA ALEATORIA NA ARVORE CRESCENTE 3 ===\n");
         somaTemp = 0;
         for (int i = 0; i < 5; i++) {
@@ -209,7 +219,7 @@ public class TesterArvoreBB100 {
 
         System.out.println("\n===============================");
 
-        
+        Runtime.getRuntime().gc();
         System.out.println("=== TESTE DE BUSCA INEXISTENTE NA ARVORE CRESCENTE (9999) ===\n");
 
         long somaB4 = 0;
@@ -268,7 +278,7 @@ public class TesterArvoreBB100 {
         System.out.println("===============================\n");
 
         long somaRandom = 0;
-
+        Runtime.getRuntime().gc();
         for (int t = 0; t < 5; t++) {
             ArvoreBinaria arvoreRandom = new ArvoreBinaria();
             int[] valoresRandom = ArvoreBinaria.gerarValoresRandom(tamanho);
@@ -292,7 +302,7 @@ public class TesterArvoreBB100 {
         System.out.println("===============================");
 
         System.out.println("=== TESTES DE BUSCA NA ARVORE ALEATORIA ===\n");
-
+        Runtime.getRuntime().gc();
         ArvoreBinaria arvoreRandomBusca = new ArvoreBinaria();
         int[] valoresRandomBusca = ArvoreBinaria.gerarValoresRandom(tamanho);
         for (int i = 0; i < tamanho; i++) {
@@ -302,6 +312,7 @@ public class TesterArvoreBB100 {
         long somaR1 = 0;
 
         System.out.println("=== BUSCA DO PRIMEIRO ELEMENTO NA ARVORE ALEATORIA (" + primeiro + ") ===\n");
+        Runtime.getRuntime().gc();
         for (int i = 0; i < 5; i++) {
             arvoreRandomBusca.buscar(primeiro);
             long inicio = System.nanoTime();
@@ -325,7 +336,7 @@ public class TesterArvoreBB100 {
 
         System.out.println("===============================");
         System.out.println("\n=== BUSCA DO ULTIMO ELEMENTO NA ARVORE ALEATORIA (" + ultimoElemento + ") ===\n");
-        
+        Runtime.getRuntime().gc();
         for (int i = 0; i < 5; i++) {
             arvoreRandomBusca.buscar(ultimoElemento);
             long inicio = System.nanoTime();
@@ -352,7 +363,7 @@ public class TesterArvoreBB100 {
         System.out.println("===============================");
 
         System.out.println("\n=== BUSCA DO ELEMENTO DO MEIO NA ARVORE ALEATORIA (" + meio + ") ===\n");
-
+        Runtime.getRuntime().gc();
         for (int i = 0; i < 5; i++) {
             arvoreRandomBusca.buscar(meio);
             long inicio = System.nanoTime();
@@ -378,7 +389,7 @@ public class TesterArvoreBB100 {
         System.out.println("=== TESTE DE BUSCA ALEATORIA NA ARVORE ALEATORIA 1 ===\n");
 
         long somaBA1 = 0;
-
+        Runtime.getRuntime().gc();
         for (int i = 0; i < 5; i++) {
             arvoreRandomBusca.buscar(aleatorio1);
             long inicio = System.nanoTime();
@@ -402,7 +413,7 @@ public class TesterArvoreBB100 {
         System.out.println("===============================");
 
         System.out.println("=== TESTE DE BUSCA ALEATORIA NA ARVORE ALEATORIA 2 ===\n");
-
+        Runtime.getRuntime().gc();
         long somaBA2 = 0;
 
         for (int i = 0; i < 5; i++) {
@@ -429,6 +440,7 @@ public class TesterArvoreBB100 {
 
         System.out.println("=== TESTE DE BUSCA ALEATORIA NA ARVORE ALEATORIA 3 ===\n");
         long somaBA3 = 0;
+        Runtime.getRuntime().gc(); 
         for (int i = 0; i < 5; i++) {
             arvoreRandomBusca.buscar(aleatorio3);
             long inicio = System.nanoTime();
@@ -455,7 +467,7 @@ public class TesterArvoreBB100 {
         System.out.println("\n=== BUSCA DE VALOR INEXISTENTE NA ARVORE ALEATORIA (999999) ===\n");
 
         long somaR4 = 0;
-
+        Runtime.getRuntime().gc();
         for (int i = 0; i < 5; i++) {
             arvoreRandomBusca.buscar(999999);
             long inicio = System.nanoTime();

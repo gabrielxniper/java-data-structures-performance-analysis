@@ -30,7 +30,7 @@ public class TesterVetor1000 {
             
 
             System.out.println("\n====================================================");
-
+            Runtime.getRuntime().gc();
             System.out.println("\n=== TESTE ORDENACAO(BUBBLE SORT) COM VETOR DE 1000 POSICOES ===");
             long somarTemposBB1000 = 0;
             for (int i = 0; i < 5; i++) {
@@ -93,7 +93,7 @@ public class TesterVetor1000 {
             Vetor.embaralhar(vetor1000);
             System.out.println("\n=== TESTE INSERCAO DE VALORES NO VETOR DE 1000 POSICOES DESORDENADO ===");
             System.out.println(Arrays.toString(vetor1000));
-            
+            Runtime.getRuntime().gc(); 
             for (int i = 0; i < 5; i++) {
                 Vetor vetorTeste = new Vetor(1000);
                 long inicio = System.nanoTime();
@@ -142,6 +142,7 @@ public class TesterVetor1000 {
 
             System.out.println("\n=== TESTE ORDENACAO(QUICK SORT) COM VETOR DE 1000 POSICOES ===");
             long somarTemposQS1000 = 0;
+            Runtime.getRuntime().gc();
             for (int i = 0; i < 5; i++) {
                 Vetor vetorTeste = new Vetor(1000);
                 for (int j = 0; j < vetor1000.length; j++) {
@@ -204,6 +205,7 @@ public class TesterVetor1000 {
             System.out.println("\n=== TESTE DE BUSCA SEQUENCIAL PRIMEIRO VALOR ===");
             long somarTemposBusca = 0;
             int valorProcurado = 1;
+            Runtime.getRuntime().gc();
             for(int i = 0; i<5; i++){
                 Vetor vetorBusca = new Vetor(1000);
                 for (int j = 0; j < vetor1000c.length; j++) {
@@ -232,6 +234,7 @@ public class TesterVetor1000 {
             int valorProcurado2 = 500;
             for(int i = 0; i<5; i++){
                 Vetor vetorBusca = new Vetor(1000);
+                Runtime.getRuntime().gc();
                 for (int j = 0; j < vetor1000c.length; j++) {
                     vetorBusca.insert(vetor1000c[j]);
                 }
@@ -328,6 +331,7 @@ public class TesterVetor1000 {
             System.out.println("\n=== TESTE DE BUSCA SEQUENCIAL VALOR ALEATORIO 3 ===");
             long somarTemposBusca6 = 0;
             int valorProcurado6 = 870;
+            Runtime.getRuntime().gc();
             for(int i = 0; i<5; i++){
                 Vetor vetorBusca = new Vetor(1000);
                 for (int j = 0; j < vetor1000c.length; j++) {
@@ -376,6 +380,7 @@ public class TesterVetor1000 {
             System.out.println("\n=== TESTE DE BUSCA BINARIA VALOR INICIAL ===");
             long somarTemposBuscaBinaria = 0;
             int valorProcuradoBinario = 1;
+            Runtime.getRuntime().gc();
             for(int i = 0; i<5; i++){
                 Vetor vetorBusca = new Vetor(1000);
                 for (int j = 0; j < vetor1000c.length; j++) {
@@ -450,6 +455,7 @@ public class TesterVetor1000 {
             System.out.println("\n=== TESTE DE BUSCA BINARIA VALOR ALEATORIO 1 ===");
             long somarTemposBuscaBinaria4 = 0;
             int valorProcuradoBinario4 = 230;
+            Runtime.getRuntime().gc();
             for(int i = 0; i<5; i++){
                 Vetor vetorBusca = new Vetor(1000);
                 for (int j = 0; j < vetor1000c.length; j++) {
@@ -525,6 +531,7 @@ public class TesterVetor1000 {
             System.out.println("\n=== TESTE DE BUSCA BINARIA VALOR INEXISTENTE ===");
             long somarTemposBuscaBinaria7 = 0;
             int valorProcuradoBinario7 = 1001;
+            Runtime.getRuntime().gc(); 
             for(int i = 0; i<5; i++){
                 Vetor vetorBusca = new Vetor(1000);
                 for (int j = 0; j < vetor1000c.length; j++) {
@@ -575,6 +582,7 @@ public class TesterVetor1000 {
 
             System.out.println("\n=== TESTE ORDENACAO(QUICK SORT) COM VETOR DE 1000 POSICOES ===");
             long somarTemposQS1000 = 0;
+            Runtime.getRuntime().gc();
             for (int i = 0; i < 5; i++) {
                 Vetor vetorTeste = new Vetor(1000);
                 for (int j = 0; j < vetor1000.length; j++) {

@@ -13,7 +13,15 @@ public class TesterArvoreAVL100 {
         int ultimo = tamanho;
 
         System.out.println("\n===============================");
-        
+        Runtime.getRuntime().gc();
+        //a seguir, criação de arvore para "aquecer" o programa e evitar valores muito altos para a primeira execução:
+        for (int t = 0; t < 5; t++) {
+            ArvoreAVL arvoreAquec = new ArvoreAVL();
+            int[] valores = ArvoreAVL.gerarValoresCresc(tamanho);
+            for (int i = 0; i < tamanho; i++) {
+                arvoreAquec.inserir(valores[i]);
+            }
+        }
         System.out.println("=== TESTES COM ARVORE AVL ("+tamanho+") ===");
         long somaCresc = 0;
         for (int t = 0; t < 5; t++) {
@@ -127,7 +135,7 @@ public class TesterArvoreAVL100 {
         System.out.println("Media busca aleatoria (" + aleatorio1 + "): " + String.format("%.4f", mediaA1 / 1000000.0) + " ms\n");
 
         System.out.println("===============================");
-
+        Runtime.getRuntime().gc();
         System.out.println("=== BUSCA ALEATORIA 2 (" + aleatorio2 + ") ===\n");
         long somaA2 = 0;
 
@@ -180,7 +188,7 @@ public class TesterArvoreAVL100 {
 
         System.out.println("===============================");
         System.out.println("=== BUSCA INEXISTENTE (" + inexistente + ") ===\n");
-
+        Runtime.getRuntime().gc();
         long somaB4 = 0;
         for (int i = 0; i < 5; i++) {
             arvoreBusca.buscar(inexistente);
@@ -207,7 +215,7 @@ public class TesterArvoreAVL100 {
         System.out.println("\n===============================");
 
         long somaDesc = 0;
-
+        Runtime.getRuntime().gc();
         for (int t = 0; t < 5; t++) {
 
             ArvoreAVL arvore = new ArvoreAVL();
